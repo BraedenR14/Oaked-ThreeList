@@ -14,6 +14,10 @@
 		DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */; };
 		DD0E21F61BDFF28B0084A2FA /* OakedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21F51BDFF28B0084A2FA /* OakedTests.swift */; };
 		DD0E22011BDFF28B0084A2FA /* OakedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */; };
+		DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */; };
+		DD6990371BE6D3BC0000F44B /* OKDSimpleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */; };
+		DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */; };
+		F75656D2E179050DE5B0B43E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A661B935AD6C06D6ACE7973 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A661B935AD6C06D6ACE7973 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0E21DD1BDFF28B0084A2FA /* Oaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD0E21E21BDFF28B0084A2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,10 @@
 		DD0E21FC1BDFF28B0084A2FA /* OakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OakedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OakedUITests.swift; sourceTree = "<group>"; };
 		DD0E22021BDFF28B0084A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDTableViewCell.swift; sourceTree = "<group>"; };
+		DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDSimpleData.swift; sourceTree = "<group>"; };
+		DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDViewController.swift; sourceTree = "<group>"; };
+		DDA2BEB61BE01EA800BEEBBB /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75656D2E179050DE5B0B43E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		609AC570774891FC3D8E56B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A661B935AD6C06D6ACE7973 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF4C2678707ADF84DCD2F2EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */,
+				8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD0E21D41BDFF28B0084A2FA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +110,8 @@
 				DD0E21F41BDFF28B0084A2FA /* OakedTests */,
 				DD0E21FF1BDFF28B0084A2FA /* OakedUITests */,
 				DD0E21DE1BDFF28B0084A2FA /* Products */,
+				AF4C2678707ADF84DCD2F2EC /* Pods */,
+				609AC570774891FC3D8E56B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +134,10 @@
 				DD0E21E71BDFF28B0084A2FA /* Assets.xcassets */,
 				DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */,
 				DD0E21EC1BDFF28B0084A2FA /* Info.plist */,
+				DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */,
+				DDA2BEB61BE01EA800BEEBBB /* Bridging.h */,
+				DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */,
+				DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */,
 			);
 			path = Oaked;
 			sourceTree = "<group>";
@@ -132,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD0E22051BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "Oaked" */;
 			buildPhases = (
+				A5FDB5D8894FA4DD4925BC6D /* Check Pods Manifest.lock */,
 				DD0E21D91BDFF28B0084A2FA /* Sources */,
 				DD0E21DA1BDFF28B0084A2FA /* Frameworks */,
 				DD0E21DB1BDFF28B0084A2FA /* Resources */,
+				7B2E86630576DE27C1E1C941 /* Embed Pods Frameworks */,
+				E21723A11B8A12C08ECF5512 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +289,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B2E86630576DE27C1E1C941 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5FDB5D8894FA4DD4925BC6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E21723A11B8A12C08ECF5512 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD0E21D91BDFF28B0084A2FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6990371BE6D3BC0000F44B /* OKDSimpleData.swift in Sources */,
+				DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */,
 				DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */,
+				DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */,
 				DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +403,7 @@
 /* Begin XCBuildConfiguration section */
 		DD0E22031BDFF28B0084A2FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -352,6 +442,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -359,6 +451,7 @@
 		};
 		DD0E22041BDFF28B0084A2FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -390,6 +483,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -397,23 +492,29 @@
 		};
 		DD0E22061BDFF28B0084A2FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Oaked/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.Oaked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
 			};
 			name = Debug;
 		};
 		DD0E22071BDFF28B0084A2FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Oaked/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.Oaked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
 			};
 			name = Release;
 		};
@@ -484,6 +585,7 @@
 				DD0E22071BDFF28B0084A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD0E22081BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +594,7 @@
 				DD0E220A1BDFF28B0084A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD0E220B1BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +603,7 @@
 				DD0E220D1BDFF28B0084A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,10 @@
+PODS:
+  - BetweenKit (2.0.1)
+
+DEPENDENCIES:
+  - BetweenKit
+
+SPEC CHECKSUMS:
+  BetweenKit: 89edc0c6dd96eb33ea02c097bb99a9b1c14880f0
+
+COCOAPODS: 0.39.0
