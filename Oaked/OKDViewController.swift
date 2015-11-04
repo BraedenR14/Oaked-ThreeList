@@ -22,6 +22,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
     
+    let tap = UITapGestureRecognizer()
+    
     var popViewController : PopUpViewControllerSwift!
     
     var leftData = NSMutableArray()
@@ -50,12 +52,16 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         self.dragCoodinator = I3GestureCoordinator.basicGestureCoordinatorFromViewController(self, withCollections: [self.leftTable,self.middleTable,self.rightTable])
         
+        tap.numberOfTapsRequired = 2
+        tap.addTarget(self, action: "editMessageClient")
+        view.addGestureRecognizer(tap)
         
-        let editSelector : Selector = "edit:"
+        /*
+        let editSelector : Selector = "editMessageClient"
         let cellTapGesture = UITapGestureRecognizer(target: self.leftTable, action: editSelector)
         cellTapGesture.numberOfTapsRequired = 2
         view.addGestureRecognizer(cellTapGesture)
-        
+        */
         
         // Do any additional setup after loading the view.
     }
@@ -162,10 +168,6 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         users.append(addEditUser)
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         self.leftData.addObject(addEditUser)
-        self.leftTable.dataSource = self
-        self.leftTable.delegate = self
-        self.leftTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.dragCoodinator = I3GestureCoordinator.basicGestureCoordinatorFromViewController(self, withCollections: [self.leftTable,self.middleTable,self.rightTable])
         self.leftTable.reloadData()
     }
     
@@ -175,6 +177,13 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.popViewController.delegate = self
         self.popViewController.title = "Add New Client"
         self.popViewController.showInView(self.view, withMessage: "Add client here", animated: true)
+    }
+    
+     func editMessageClient(){
+        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
+        self.popViewController.delegate = self
+        self.popViewController.title = "Edit and Message Client"
+        self.popViewController.showInView(self.view, withMessage: "Edit or Message Client", animated: true)
     }
     
     
