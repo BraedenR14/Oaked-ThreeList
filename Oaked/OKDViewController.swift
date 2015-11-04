@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Oaked
 
 class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate {
     
@@ -15,6 +14,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var leftTable: UITableView!
     @IBOutlet weak var middleTable: UITableView!
     @IBOutlet weak var rightTable: UITableView!
+    @IBOutlet weak var addClient: UIBarButtonItem!
+
     
     
     
@@ -31,7 +32,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let data :OKDSimpleData = OKDSimpleData(title: "Test title")
         
         self.leftData.addObject(data)
-
+        
         self.leftTable.dataSource = self
         self.leftTable.delegate = self
         self.leftTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -47,10 +48,15 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.dragCoodinator = I3GestureCoordinator.basicGestureCoordinatorFromViewController(self, withCollections: [self.leftTable,self.middleTable,self.rightTable])
         
         
+        let editSelector : Selector = "edit:"
+        let cellTapGesture = UITapGestureRecognizer(target: self.leftTable, action: editSelector)
+        cellTapGesture.numberOfTapsRequired = 2
+        view.addGestureRecognizer(cellTapGesture)
+        
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -84,9 +90,9 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell",forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell",forIndexPath: indexPath)
         
-        var tableData = getDataSetFor(tableView)
+        let tableData = getDataSetFor(tableView)
         
         let data = tableData.objectAtIndex(indexPath.row)
         
@@ -94,7 +100,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         return cell
     }
-
+    
     //MARK: - I3DragDataSource
     func canItemBeDraggedAt(at: NSIndexPath!, inCollection collection: UIView!) -> Bool {
         //All items can be moved
@@ -105,10 +111,10 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //TODO
         let fromTableView = fromCollection as! UITableView
         let toTableView = toCollection as! UITableView
-    
+        
         //Get dataSet for given collections
-        var fromDataSet = getDataSetFor(fromTableView)
-        var toDataSet = getDataSetFor(toTableView)
+        let fromDataSet = getDataSetFor(fromTableView)
+        let toDataSet = getDataSetFor(toTableView)
         
         //Data to be exchanged
         let exchangeData = fromDataSet[from.row]
@@ -150,10 +156,10 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //MARK: - Interface Actions
     @IBAction func newClient(sender: UIBarButtonItem) {
-        var popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController"))! as UIViewController
-        var nav = UINavigationController(rootViewController: popoverContent)
+        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController"))! as UIViewController
+        let nav = UINavigationController(rootViewController: popoverContent)
         nav.modalPresentationStyle = UIModalPresentationStyle.Popover
-        var popover = nav.popoverPresentationController
+        let popover = nav.popoverPresentationController
         popoverContent.preferredContentSize = CGSizeMake(500,600)
         popover!.delegate = self
         popover!.sourceView = self.view
@@ -169,12 +175,12 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

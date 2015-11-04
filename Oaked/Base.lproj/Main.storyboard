@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDB-YO-5hz">
@@ -80,10 +80,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="uDB-YO-5hz" secondAttribute="trailing" constant="-243" id="AUJ-vY-xH7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="uDB-YO-5hz" secondAttribute="bottom" constant="-64" id="At8-24-9hg"/>
-                            <constraint firstItem="uDB-YO-5hz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UKN-Ec-LNI"/>
-                            <constraint firstItem="uDB-YO-5hz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lUL-gX-wK5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uDB-YO-5hz" secondAttribute="trailing" constant="-243" identifier="id1" id="AUJ-vY-xH7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="uDB-YO-5hz" secondAttribute="bottom" constant="-64" identifier="id2" id="At8-24-9hg"/>
+                            <constraint firstItem="uDB-YO-5hz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" identifier="id3" id="UKN-Ec-LNI"/>
+                            <constraint firstItem="uDB-YO-5hz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" identifier="id4" id="lUL-gX-wK5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -107,12 +107,13 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="WjH-hD-s2b"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gIW-4H-1tE">
                             <connections>
-                                <action selector="newClient:" destination="BYZ-38-t0r" id="ZWY-PT-3O2"/>
+                                <action selector="newClient:" destination="BYZ-38-t0r" id="KZ2-7N-jDd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="addClient" destination="gIW-4H-1tE" id="p9x-Hj-Jq5"/>
                         <outlet property="leftTable" destination="Ga9-io-Fam" id="n9p-En-OgQ"/>
                         <outlet property="middleTable" destination="aEp-71-p02" id="o97-t8-0bE"/>
                         <outlet property="rightTable" destination="ehW-wL-MBj" id="8tE-tk-hsQ"/>
