@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject, NSCoding {
+class User: NSObject, NSCoding, NSCopying {
     
     // MARK: Types
     
@@ -21,9 +21,10 @@ class User: NSObject, NSCoding {
     // Add in types of Users such as VIP?
     
     // MARK: Properties
-    let firstName: String
-    let lastName: String
-    let phoneNumber: String
+    var firstName = ""
+    var lastName = ""
+    var phoneNumber = ""
+    var title = ""
     
     // MARK: Initializers
     
@@ -31,6 +32,7 @@ class User: NSObject, NSCoding {
         self.firstName = firstName
         self.lastName = lastName
         self.phoneNumber = phoneNumber
+        self.title = firstName
     }
     
     // MARK: NSCoding
@@ -45,6 +47,10 @@ class User: NSObject, NSCoding {
         aCoder.encodeObject(firstName, forKey: CoderKeys.firstNameKey.rawValue)
         aCoder.encodeObject(lastName, forKey: CoderKeys.lastNameKey.rawValue)
         aCoder.encodeObject(phoneNumber, forKey: CoderKeys.phoneNumberKey.rawValue)
+    }
+    
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        return User(firstName: self.firstName, lastName: self.lastName, phoneNumber: self.phoneNumber)
     }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 @objc protocol UserAddEditDelegate {
-    func userToAddEdit(addEditUser: User)
+    func userToAddEdit(controller:PopUpViewControllerSwift, addEditUser: User)
 }
 
 @objc public class PopUpViewControllerSwift : UIViewController {
@@ -22,7 +22,7 @@ import QuartzCore
     @IBOutlet weak var phoneNumberLabel: UITextField!
     @IBOutlet weak var addEditButton: UIButton!
 
-    weak var delegate: UserAddEditDelegate?
+    var delegate: UserAddEditDelegate! = nil
     
     var user: User?
 
@@ -78,20 +78,6 @@ import QuartzCore
     
     //MARK: Navigation
     
-    // This method lets you configure a view controller before it's presented.
-    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if addEditButton === sender {
-            
-            let firstName = firstNameLabel.text ?? ""
-            let lastName = lastNameLabel.text ?? ""
-            let phoneNumber = phoneNumberLabel.text ?? ""
-            
-            // Set the meal to be passed to MealTableViewController after the unwind segue.
-            user = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
-        }
-    }
-    
-    
     @IBAction public func closePopup(sender: AnyObject) {
         if addEditButton === sender {
             let firstName = firstNameLabel.text ?? ""
@@ -100,7 +86,7 @@ import QuartzCore
             
             // Set the meal to be passed to MealTableViewController after the unwind segue.
             user = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
-            delegate?.userToAddEdit(user!)
+            delegate.userToAddEdit(self, addEditUser: user!)
         }
         self.removeAnimate()
     }

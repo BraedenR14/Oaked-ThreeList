@@ -31,7 +31,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let data :OKDSimpleData = OKDSimpleData(title: "Test title")
+        //let data :OKDSimpleData = OKDSimpleData(title: "Test title")
+        let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         
         self.leftData.addObject(data)
         
@@ -156,26 +157,24 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return true
     }
     
-    func userToAddEdit(user: User){
-        
+    //MARK: - Delegate methods
+    func userToAddEdit(controller: PopUpViewControllerSwift, addEditUser: User){
+        users.append(addEditUser)
+        //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        self.leftData.addObject(addEditUser)
+        self.leftTable.dataSource = self
+        self.leftTable.delegate = self
+        self.leftTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.dragCoodinator = I3GestureCoordinator.basicGestureCoordinatorFromViewController(self, withCollections: [self.leftTable,self.middleTable,self.rightTable])
+        self.leftTable.reloadData()
     }
     
     //MARK: - Interface Actions
     @IBAction func newClient(sender: UIBarButtonItem) {
         self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
+        self.popViewController.delegate = self
         self.popViewController.title = "Add New Client"
         self.popViewController.showInView(self.view, withMessage: "Add client here", animated: true)
-        /*
-        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController"))! as UIViewController
-        let nav = UINavigationController(rootViewController: popoverContent)
-        nav.modalPresentationStyle = UIModalPresentationStyle.Popover
-        let popover = nav.popoverPresentationController
-        popoverContent.preferredContentSize = CGSizeMake(500,600)
-        popover!.delegate = self
-        popover!.sourceView = self.view
-        popover!.sourceRect = CGRectMake(100,100,0,0)
-        
-        self.presentViewController(nav, animated: true, completion: nil)*/
     }
     
     
@@ -191,22 +190,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // Pass the selected object to the new view controller.
     }
     */
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! PopUpViewControllerSwift
-        controller.delegate = self
-    }
-    
-    
-    
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? PopUpViewControllerSwift, user = sourceViewController.user {
-            // Add a user
-            //let newIndexPath = NSIndexPath(forRow: users.count, inSection: 0)
-            users.append(user)
-            //tableView.insert
-        }
-    }
+
     
     
 }
