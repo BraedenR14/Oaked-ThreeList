@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import QuartzCore
 
-class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate {
+class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, UserAddEditDelegate {
     
     
     @IBOutlet weak var leftTable: UITableView!
@@ -17,10 +18,11 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var addClient: UIBarButtonItem!
 
     
-    
-    
+    var users = [User]()
     
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
+    
+    var popViewController : PopUpViewControllerSwift!
     
     var leftData = NSMutableArray()
     var middleData = NSMutableArray()
@@ -154,8 +156,16 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return true
     }
     
+    func userToAddEdit(user: User){
+        
+    }
+    
     //MARK: - Interface Actions
     @IBAction func newClient(sender: UIBarButtonItem) {
+        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
+        self.popViewController.title = "Add New Client"
+        self.popViewController.showInView(self.view, withMessage: "Add client here", animated: true)
+        /*
         let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController"))! as UIViewController
         let nav = UINavigationController(rootViewController: popoverContent)
         nav.modalPresentationStyle = UIModalPresentationStyle.Popover
@@ -165,8 +175,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         popover!.sourceView = self.view
         popover!.sourceRect = CGRectMake(100,100,0,0)
         
-        self.presentViewController(nav, animated: true, completion: nil)
-        
+        self.presentViewController(nav, animated: true, completion: nil)*/
     }
     
     
@@ -182,5 +191,22 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller = segue.destinationViewController as! PopUpViewControllerSwift
+        controller.delegate = self
+    }
+    
+    
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? PopUpViewControllerSwift, user = sourceViewController.user {
+            // Add a user
+            //let newIndexPath = NSIndexPath(forRow: users.count, inSection: 0)
+            users.append(user)
+            //tableView.insert
+        }
+    }
+    
     
 }

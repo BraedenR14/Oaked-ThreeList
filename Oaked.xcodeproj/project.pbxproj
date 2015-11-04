@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66CAD0611BE9C0CF0044C062 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */; };
+		66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */; };
+		66CAD0641BE9C0FD0044C062 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0631BE9C0FD0044C062 /* User.swift */; };
 		DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */; };
 		DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21E21BDFF28B0084A2FA /* ViewController.swift */; };
 		DD0E21E61BDFF28B0084A2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E41BDFF28B0084A2FA /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		0A661B935AD6C06D6ACE7973 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
+		66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
+		66CAD0631BE9C0FD0044C062 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0E21DD1BDFF28B0084A2FA /* Oaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +100,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		66CAD05E1BE9C0AE0044C062 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */,
+				66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */,
+			);
+			name = Popup;
+			sourceTree = "<group>";
+		};
 		AF4C2678707ADF84DCD2F2EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +145,7 @@
 			children = (
 				DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */,
 				DD0E21E21BDFF28B0084A2FA /* ViewController.swift */,
+				66CAD05E1BE9C0AE0044C062 /* Popup */,
 				DD0E21E41BDFF28B0084A2FA /* Main.storyboard */,
 				DD0E21E71BDFF28B0084A2FA /* Assets.xcassets */,
 				DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */,
@@ -138,6 +154,7 @@
 				DDA2BEB61BE01EA800BEEBBB /* Bridging.h */,
 				DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */,
 				DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */,
+				66CAD0631BE9C0FD0044C062 /* User.swift */,
 			);
 			path = Oaked;
 			sourceTree = "<group>";
@@ -270,6 +287,7 @@
 				DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */,
 				DD0E21E81BDFF28B0084A2FA /* Assets.xcassets in Resources */,
 				DD0E21E61BDFF28B0084A2FA /* Main.storyboard in Resources */,
+				66CAD0611BE9C0CF0044C062 /* PopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +365,8 @@
 				DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */,
 				DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */,
 				DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */,
+				66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */,
+				66CAD0641BE9C0FD0044C062 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
