@@ -32,7 +32,7 @@ class User: NSObject, NSCoding, NSCopying {
         self.firstName = firstName
         self.lastName = lastName
         self.phoneNumber = phoneNumber
-        self.title = firstName
+        self.title = "\(firstName) \(lastName)"
     }
     
     // MARK: NSCoding

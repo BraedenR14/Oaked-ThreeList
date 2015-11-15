@@ -56,13 +56,6 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         tap.addTarget(self, action: "editMessageClient")
         view.addGestureRecognizer(tap)
         
-        /*
-        let editSelector : Selector = "editMessageClient"
-        let cellTapGesture = UITapGestureRecognizer(target: self.leftTable, action: editSelector)
-        cellTapGesture.numberOfTapsRequired = 2
-        view.addGestureRecognizer(cellTapGesture)
-        */
-        
         // Do any additional setup after loading the view.
     }
     
@@ -183,7 +176,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
         self.popViewController.delegate = self
         self.popViewController.title = "Edit and Message Client"
-        self.popViewController.showInView(self.view, withMessage: "Edit or Message Client", animated: true)
+        self.popViewController.showInView(self.view, withMessage: "Profile", animated: true)
     }
     
     
