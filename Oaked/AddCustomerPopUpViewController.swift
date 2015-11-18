@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 @objc protocol CustomerAddDelegate {
-    func customerToAdd(controller:AddCustomerPopUpViewControllerSwift, addCustomer: User)
+    func customerToAdd(controller:AddCustomerPopUpViewControllerSwift, addCustomer: Customer)
 }
 
 @objc public class AddCustomerPopUpViewControllerSwift : UIViewController {
@@ -24,7 +24,7 @@ import QuartzCore
 
     var delegate: CustomerAddDelegate! = nil
     
-    var user: User?
+    var customer: Customer?
 
     
     required public init?(coder aDecoder: NSCoder) {
@@ -88,8 +88,8 @@ import QuartzCore
             let id = "2"
             
             // Set the user to be passed to OKDViewController after the unwind segue.
-            user = User(id: id, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
-            delegate.customerToAdd(self, addCustomer: user!)
+            customer = Customer(id: id, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
+            delegate.customerToAdd(self, addCustomer: customer!)
         }
         self.removeAnimate()
     }

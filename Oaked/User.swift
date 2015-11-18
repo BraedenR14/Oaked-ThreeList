@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject, NSCoding, NSCopying {
+class Customer: NSObject, NSCoding, NSCopying {
     
     // MARK: Types
     
@@ -19,7 +19,7 @@ class User: NSObject, NSCoding, NSCopying {
         case phoneNumberKey
     }
     
-    // Add in types of Users such as VIP?
+    // Add in types of Customers such as VIP?
     
     // MARK: Properties
     var id = ""
@@ -55,7 +55,7 @@ class User: NSObject, NSCoding, NSCopying {
     }
     
     func copyWithZone(zone: NSZone) -> AnyObject {
-        return User(id: self.id, firstName: self.firstName, lastName: self.lastName, phoneNumber: self.phoneNumber)
+        return Customer(id: self.id, firstName: self.firstName, lastName: self.lastName, phoneNumber: self.phoneNumber)
     }
 
 }

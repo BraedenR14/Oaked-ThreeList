@@ -17,7 +17,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var rightTable: UITableView!
     @IBOutlet weak var addClient: UIBarButtonItem!
     
-    var users = [User]()
+    var customers = [Customer]()
     
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
     
@@ -37,7 +37,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         //let data :OKDSimpleData = OKDSimpleData(title: "Test title")
-        let data :User = User(id: "1", firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        let data :Customer = Customer(id: "1", firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         
         self.leftData.addObject(data)
         
@@ -112,10 +112,10 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let tableData = getDataSetFor(tableView)
             let cellData = tableData.objectAtIndex(indexPath.row)
             
-            if let cellCustomer = cellData as? User {
+            if let cellCustomer = cellData as? Customer {
                 self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
                 self.popViewController.delegate = self
-                self.popViewController.user = cellCustomer
+                self.popViewController.customer = cellCustomer
                 self.popViewController.showInView(self.view, animated: true)
             }
             
@@ -201,16 +201,16 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //MARK: - Delegate methods
-    func userToAddEdit(controller: PopUpViewControllerSwift, addEditUser: User){
-        users.append(addEditUser)
+    func userToAddEdit(controller: PopUpViewControllerSwift, addEditUser: Customer){
+        customers.append(addEditUser)
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         self.leftData.addObject(addEditUser)
         self.leftTable.reloadData()
     }
     
     // Add customer
-    func customerToAdd(controller: AddCustomerPopUpViewControllerSwift, addCustomer: User){
-        users.append(addCustomer)
+    func customerToAdd(controller: AddCustomerPopUpViewControllerSwift, addCustomer: Customer){
+        customers.append(addCustomer)
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         self.leftData.addObject(addCustomer)
         self.leftTable.reloadData()
@@ -228,7 +228,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
         self.popViewController.delegate = self
         self.popViewController.title = "Edit and Message Client"
-        self.popViewController.showInView(self.view, withMessage: "Profile", animated: true)
+        self.popViewController.showInView(self.view, animated: true)
     }
     
     
