@@ -9,22 +9,25 @@
 import UIKit
 import QuartzCore
 
-class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, UserAddEditDelegate {
+class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, UserAddEditDelegate, CustomerAddDelegate {
     
     
     @IBOutlet weak var leftTable: UITableView!
     @IBOutlet weak var middleTable: UITableView!
     @IBOutlet weak var rightTable: UITableView!
     @IBOutlet weak var addClient: UIBarButtonItem!
-
     
     var users = [User]()
     
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
     
     let tap = UITapGestureRecognizer()
+    var tapCount:Int = 0
+    var tapTimer:NSTimer?
+    var tappedRow:Int?
     
     var popViewController : PopUpViewControllerSwift!
+    var addCustomerPopupViewController : AddCustomerPopUpViewControllerSwift!
     
     var leftData = NSMutableArray()
     var middleData = NSMutableArray()
@@ -34,7 +37,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         //let data :OKDSimpleData = OKDSimpleData(title: "Test title")
-        let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        let data :User = User(id: "1", firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         
         self.leftData.addObject(data)
         
@@ -54,7 +57,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         tap.numberOfTapsRequired = 2
         tap.addTarget(self, action: "editMessageClient")
-        view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
     }
@@ -101,6 +104,45 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.textLabel?.text = data.title
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //checking for double taps here
+        if(tapCount == 1 && tapTimer != nil && tappedRow == indexPath.row){
+            let tableData = getDataSetFor(tableView)
+            let cellData = tableData.objectAtIndex(indexPath.row)
+            
+            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
+            self.popViewController.delegate = self
+            self.popViewController.title = "Edit and Message Client"
+            self.popViewController.showInView(self.view, withMessage: "Profile", animated: true)
+            
+            tapTimer?.invalidate()
+            tapTimer = nil
+            tapCount = 0
+        }
+        else if(tapCount == 0){
+            //This is the first tap. If there is no tap till tapTimer is fired, it is a single tap
+            tapCount = tapCount + 1;
+            tappedRow = indexPath.row;
+            tapTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "tapTimerFired:", userInfo: nil, repeats: false)
+        }
+        else if(tappedRow != indexPath.row){
+            //tap on new row
+            tapCount = 0;
+            if(tapTimer != nil){
+                tapTimer?.invalidate()
+                tapTimer = nil
+            }
+        }
+    }
+    
+    func tapTimerFired(aTimer:NSTimer){
+        //timer fired, there was a single tap on indexPath.row = tappedRow
+        if(tapTimer != nil){
+        tapCount = 0;
+        tappedRow = -1;
+        }
     }
     
     //MARK: - I3DragDataSource
@@ -164,12 +206,20 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.leftTable.reloadData()
     }
     
+    // Add customer
+    func customerToAdd(controller: AddCustomerPopUpViewControllerSwift, addCustomer: User){
+        users.append(addCustomer)
+        //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        self.leftData.addObject(addCustomer)
+        self.leftTable.reloadData()
+    }
+    
     //MARK: - Interface Actions
     @IBAction func newClient(sender: UIBarButtonItem) {
-        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
-        self.popViewController.delegate = self
-        self.popViewController.title = "Add New Client"
-        self.popViewController.showInView(self.view, withMessage: "Add client here", animated: true)
+        self.addCustomerPopupViewController = AddCustomerPopUpViewControllerSwift(nibName: "AddCustomerPopupViewController", bundle: nil)
+        self.addCustomerPopupViewController.delegate = self
+        self.addCustomerPopupViewController.title = "Add New Customer"
+        self.addCustomerPopupViewController.showInView(self.view, withMessage: "Add Customer", animated: true)
     }
     
      func editMessageClient(){
