@@ -41,12 +41,16 @@ import QuartzCore
         self.popUpView.layer.cornerRadius = 5
         self.popUpView.layer.shadowOpacity = 0.8
         self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        self.title = "\(user?.firstName) \(user?.lastName)'s Profile"
+        firstNameLabel.text = user?.firstName
+        lastNameLabel.text = user?.lastName
+        phoneNumberLabel.text = user?.phoneNumber
     }
     
-    public func showInView(aView: UIView!, withMessage message: String!, animated: Bool)
+    public func showInView(aView: UIView!, animated: Bool)
     {
         aView.addSubview(self.view)
-        messageLabel!.text = message
+        messageLabel!.text = "\(user?.firstName) \(user?.lastName)'s Profile"
         if animated
         {
             self.showAnimate()
@@ -83,9 +87,10 @@ import QuartzCore
             let firstName = firstNameLabel.text ?? ""
             let lastName = lastNameLabel.text ?? ""
             let phoneNumber = phoneNumberLabel.text ?? ""
+            let id = "2"
             
             // Set the meal to be passed to MealTableViewController after the unwind segue.
-            user = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
+            user = User(id: id, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
             delegate.userToAddEdit(self, addEditUser: user!)
         }
         self.removeAnimate()

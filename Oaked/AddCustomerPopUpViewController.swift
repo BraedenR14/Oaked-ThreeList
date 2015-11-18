@@ -84,8 +84,11 @@ import QuartzCore
             let lastName = lastNameLabel.text ?? ""
             let phoneNumber = phoneNumberLabel.text ?? ""
             
+            //TODO: Need to make it find this information from the database based on phone number/first name
+            let id = "2"
+            
             // Set the user to be passed to OKDViewController after the unwind segue.
-            user = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
+            user = User(id: id, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
             delegate.customerToAdd(self, addCustomer: user!)
         }
         self.removeAnimate()

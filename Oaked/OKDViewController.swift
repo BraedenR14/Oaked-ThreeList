@@ -112,10 +112,12 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let tableData = getDataSetFor(tableView)
             let cellData = tableData.objectAtIndex(indexPath.row)
             
-            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
-            self.popViewController.delegate = self
-            self.popViewController.title = "Edit and Message Client"
-            self.popViewController.showInView(self.view, withMessage: "Profile", animated: true)
+            if let cellCustomer = cellData as? User {
+                self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
+                self.popViewController.delegate = self
+                self.popViewController.user = cellCustomer
+                self.popViewController.showInView(self.view, animated: true)
+            }
             
             tapTimer?.invalidate()
             tapTimer = nil
