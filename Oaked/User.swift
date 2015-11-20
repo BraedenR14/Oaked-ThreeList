@@ -25,6 +25,7 @@ class User: NSObject, NSCoding, NSCopying {
     var lastName = ""
     var phoneNumber = ""
     var title = ""
+    var tableNumber = 0
     
     // MARK: Initializers
     
@@ -33,6 +34,7 @@ class User: NSObject, NSCoding, NSCopying {
         self.lastName = lastName
         self.phoneNumber = phoneNumber
         self.title = "\(firstName) \(lastName)"
+        self.tableNumber = 1
     }
     
     // MARK: NSCoding
