@@ -61,6 +61,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         // Do any additional setup after loading the view.
     }
     
+    // Loads up data from Core Data
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -91,6 +92,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //MARK: - Helper
+    
+    //Get the dataSet and number (probably should be a enum) for a given table view
     func getDataSetFor(tableView: UITableView) -> (dataSet:NSMutableArray,tableNumber: Int){
         var dataSet = NSMutableArray()
         var tableNumber = 0
@@ -114,6 +117,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return (dataSet,tableNumber)
     }
     
+    
+    //Takes the list of all users and sorts them into their respective table's data set
     func loadTablesWithUsers(){
         
         for okdUser in users
@@ -135,6 +140,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
     }
     
+    //Convert the CoreData user to a table view User object
     func convertOKDUserToUser(okdUser: NSManagedObject) -> User
     {
         var user :User = User(firstName: okdUser.valueForKey("firstName") as! String, lastName: okdUser.valueForKey("lastName") as! String, phoneNumber: okdUser.valueForKey("phoneNumber") as! String)
@@ -144,6 +150,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return user
     }
     
+    //Find the CoreData OKDUser object given a table view used User object
     func findOKDUserFromUser(currentUser: User) -> Int
     {
         var user = 0
@@ -180,6 +187,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return cell
     }
     
+    
+    //Save a given table view User object into a CoreData OKDUser and save it in CoreData
     func saveUser(user: User)
     {
         let appDelegate =
@@ -234,9 +243,10 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let exchangeData = fromDataSet.dataSet[from.row] as! User
         exchangeData.tableNumber = toDataSet.tableNumber
         
-        //Update data sets
+        //Save user using Core Data
         self.saveUser(exchangeData)
         
+        //Update user sets
         fromDataSet.dataSet.removeObjectAtIndex(from.row)
         toDataSet.dataSet.insertObject(exchangeData, atIndex: to.row)
         
@@ -272,8 +282,14 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //MARK: - Delegate methods
     func userToAddEdit(controller: PopUpViewControllerSwift, addEditUser: User){
+        //Save user to core data
         self.saveUser(addEditUser)
+        
+        //Update the table reference
+        //Always 1 as they get put into the left table when a user first comes in
         addEditUser.tableNumber = 1
+        
+        //Add to the table views data and reload the table
         self.leftData.addObject(addEditUser)
         self.leftTable.reloadData()
     }
