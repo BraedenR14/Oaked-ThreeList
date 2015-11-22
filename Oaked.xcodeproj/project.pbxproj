@@ -19,6 +19,8 @@
 		DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */; };
 		DD0E21F61BDFF28B0084A2FA /* OakedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21F51BDFF28B0084A2FA /* OakedTests.swift */; };
 		DD0E22011BDFF28B0084A2FA /* OakedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */; };
+		DD3725011BFAA35C00BF67DF /* OKDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */; };
+		DD3725031BFAAB9300BF67DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3725021BFAAB9300BF67DF /* CoreData.framework */; };
 		DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */; };
 		DD6990371BE6D3BC0000F44B /* OKDSimpleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */; };
 		DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */; };
@@ -64,6 +66,8 @@
 		DD0E21FC1BDFF28B0084A2FA /* OakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OakedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OakedUITests.swift; sourceTree = "<group>"; };
 		DD0E22021BDFF28B0084A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OKDModel.xcdatamodel; sourceTree = "<group>"; };
+		DD3725021BFAAB9300BF67DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDTableViewCell.swift; sourceTree = "<group>"; };
 		DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDSimpleData.swift; sourceTree = "<group>"; };
 		DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3725031BFAAB9300BF67DF /* CoreData.framework in Frameworks */,
 				F75656D2E179050DE5B0B43E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +104,7 @@
 		609AC570774891FC3D8E56B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD3725021BFAAB9300BF67DF /* CoreData.framework */,
 				0A661B935AD6C06D6ACE7973 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -161,6 +167,7 @@
 				DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */,
 				DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */,
 				66CAD0631BE9C0FD0044C062 /* User.swift */,
+				DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */,
 			);
 			path = Oaked;
 			sourceTree = "<group>";
@@ -371,6 +378,7 @@
 				DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */,
 				DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */,
 				DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */,
+				DD3725011BFAA35C00BF67DF /* OKDModel.xcdatamodeld in Sources */,
 				DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */,
 				66FFC48C1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift in Sources */,
 				66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */,
@@ -634,6 +642,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */,
+			);
+			currentVersion = DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */;
+			path = OKDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD0E21D51BDFF28B0084A2FA /* Project object */;
 }
