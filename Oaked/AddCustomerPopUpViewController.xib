@@ -48,6 +48,7 @@
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-6W-QjN">
                                             <rect key="frame" x="88" y="0.0" width="25" height="30"/>
+                                            <color key="textColor" red="0.3411764706" green="0.086274509799999996" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         </textField>
@@ -64,6 +65,7 @@
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ssw-dx-1eB">
                                             <rect key="frame" x="87" y="0.0" width="25" height="30"/>
+                                            <color key="textColor" red="0.3411764706" green="0.086274509799999996" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         </textField>
@@ -80,6 +82,7 @@
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-n8-2kZ">
                                             <rect key="frame" x="120" y="0.0" width="25" height="30"/>
+                                            <color key="textColor" red="0.3411764706" green="0.086274509799999996" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                         </textField>
@@ -115,6 +118,7 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.16862745100000001" green="0.61960784310000006" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="s0b-SY-EoC" secondAttribute="bottom" constant="9" id="41I-C3-3N5"/>
                         <constraint firstItem="vGX-I2-Qu4" firstAttribute="leading" secondItem="Pon-Sf-YGC" secondAttribute="leading" id="HAu-a9-fm5"/>

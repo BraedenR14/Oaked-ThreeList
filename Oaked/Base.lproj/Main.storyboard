@@ -156,7 +156,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Oaked" id="bcR-yv-oJr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="WjH-hD-s2b"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gIW-4H-1tE">
                             <connections>
                                 <action selector="newClient:" destination="BYZ-38-t0r" id="KZ2-7N-jDd"/>

@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, UserAddEditDelegate, CustomerAddDelegate {
+class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, CustomerProfileDelegate, CustomerAddDelegate {
     
     
     @IBOutlet weak var leftTable: UITableView!
@@ -201,10 +201,12 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //MARK: - Delegate methods
-    func userToAddEdit(controller: PopUpViewControllerSwift, addEditUser: Customer){
-        customers.append(addEditUser)
+    
+    // Customer Profile
+    func customerProfileToDisplay(controller: PopUpViewControllerSwift, customerProfile: Customer) {
+        customers.append(customerProfile)
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
-        self.leftData.addObject(addEditUser)
+        self.leftData.addObject(customerProfile)
         self.leftTable.reloadData()
     }
     

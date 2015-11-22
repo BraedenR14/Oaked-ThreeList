@@ -9,8 +9,8 @@
 import UIKit
 import QuartzCore
 
-@objc protocol UserAddEditDelegate {
-    func userToAddEdit(controller:PopUpViewControllerSwift, addEditUser: Customer)
+@objc protocol CustomerProfileDelegate {
+    func customerProfileToDisplay(controller:PopUpViewControllerSwift, customerProfile: Customer)
 }
 
 @objc public class PopUpViewControllerSwift : UIViewController {
@@ -20,9 +20,8 @@ import QuartzCore
     @IBOutlet weak var firstNameLabel: UITextField!
     @IBOutlet weak var lastNameLabel: UITextField!
     @IBOutlet weak var phoneNumberLabel: UITextField!
-    @IBOutlet weak var addEditButton: UIButton!
 
-    var delegate: UserAddEditDelegate! = nil
+    var delegate: CustomerProfileDelegate! = nil
     
     var customer: Customer?
 
@@ -84,7 +83,7 @@ import QuartzCore
     //MARK: Navigation
     
     @IBAction public func closePopup(sender: AnyObject) {
-        if addEditButton === sender {
+        /*if addEditButton === sender {
             let firstName = firstNameLabel.text ?? ""
             let lastName = lastNameLabel.text ?? ""
             let phoneNumber = phoneNumberLabel.text ?? ""
@@ -92,8 +91,8 @@ import QuartzCore
             
             // Set the meal to be passed to MealTableViewController after the unwind segue.
             customer = Customer(id: id, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
-            delegate.userToAddEdit(self, addEditUser: customer!)
-        }
+            delegate.customerProfileToDisplay(self, customerProfile: customer!)
+        }*/
         self.removeAnimate()
     }
 }
