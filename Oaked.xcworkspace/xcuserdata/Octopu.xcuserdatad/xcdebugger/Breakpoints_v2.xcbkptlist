@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
             endingLineNumber = "247"
-            landmarkName = "dropItemAt(_:fromCollection:toItemAt:onCollection:)"
+            landmarkName = "saveCustomer(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
-            landmarkName = "convertOKDUserToUser(_:)"
+            landmarkName = "loadTablesWithUsers()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
