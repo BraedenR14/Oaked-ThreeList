@@ -124,31 +124,31 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     //Takes the list of all users and sorts them into their respective table's data set
     func loadTablesWithUsers(){
         
-        for okdUser in customers
+        for odkCustomer in customers
         {
-            var user = convertOKDUserToUser(okdUser)
+            let customer = convertOKDCustomerToCustomer(odkCustomer)
             
-            if(user.tableNumber == 1){
-                self.leftData.addObject(user);
+            if(customer.tableNumber == 1){
+                self.leftData.addObject(customer);
             }
-            else if(user.tableNumber == 2)
+            else if(customer.tableNumber == 2)
             {
-                self.middleData.addObject(user);
+                self.middleData.addObject(customer);
             }
             else
             {
-                self.rightData.addObject(user);
+                self.rightData.addObject(customer);
             }
         }
         
     }
     
     //Convert the CoreData user to a table view User object
-    func convertOKDUserToUser(okdUser: NSManagedObject) -> Customer
+    func convertOKDCustomerToCustomer(okdCustomer: NSManagedObject) -> Customer
     {
-        var customer :Customer = Customer(id: "1", firstName: okdUser.valueForKey("firstName") as! String, lastName: okdUser.valueForKey("lastName") as! String, phoneNumber: okdUser.valueForKey("phoneNumber") as! String)
+        let customer :Customer = Customer(id: "1", firstName: okdCustomer.valueForKey("firstName") as! String, lastName: okdCustomer.valueForKey("lastName") as! String, phoneNumber: okdCustomer.valueForKey("phoneNumber") as! String)
         
-        customer.tableNumber = (okdUser.valueForKey("tableNumber")?.integerValue)!
+        customer.tableNumber = (okdCustomer.valueForKey("tableNumber")?.integerValue)!
         
         return customer
     }
