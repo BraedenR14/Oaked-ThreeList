@@ -10,7 +10,6 @@ import UIKit
 import QuartzCore
 import CoreData
 
-
 class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, CustomerProfileDelegate, CustomerAddDelegate {
     
     
@@ -19,7 +18,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var rightTable: UITableView!
     @IBOutlet weak var addClient: UIBarButtonItem!
     
-    var customers = [Customer]()
+    // turn this into var customers = [NSManagedObject]()
+    var customers = [NSManagedObject]()
     
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
     
@@ -39,7 +39,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         //let data :OKDSimpleData = OKDSimpleData(title: "Test title")
-        let data :Customer = Customer(id: "1", firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         
         //self.leftData.addObject(data)
         
@@ -60,7 +60,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         tap.numberOfTapsRequired = 2
         tap.addTarget(self, action: "editMessageClient")
         //view.addGestureRecognizer(tap)
-        
+        //view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
@@ -81,7 +81,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         do {
             let results =
             try managedContext.executeFetchRequest(fetchRequest)
-            users = results as! [NSManagedObject]
+            customers = results as! [NSManagedObject]
             
             self.loadTablesWithUsers();
         } catch let error as NSError {
@@ -124,7 +124,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     //Takes the list of all users and sorts them into their respective table's data set
     func loadTablesWithUsers(){
         
-        for okdUser in users
+        for okdUser in customers
         {
             var user = convertOKDUserToUser(okdUser)
             
@@ -144,24 +144,24 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //Convert the CoreData user to a table view User object
-    func convertOKDUserToUser(okdUser: NSManagedObject) -> User
+    func convertOKDUserToUser(okdUser: NSManagedObject) -> Customer
     {
-        var user :User = User(firstName: okdUser.valueForKey("firstName") as! String, lastName: okdUser.valueForKey("lastName") as! String, phoneNumber: okdUser.valueForKey("phoneNumber") as! String)
+        var customer :Customer = Customer(id: "1", firstName: okdUser.valueForKey("firstName") as! String, lastName: okdUser.valueForKey("lastName") as! String, phoneNumber: okdUser.valueForKey("phoneNumber") as! String)
         
-        user.tableNumber = (okdUser.valueForKey("tableNumber")?.integerValue)!
+        customer.tableNumber = (okdUser.valueForKey("tableNumber")?.integerValue)!
         
-        return user
+        return customer
     }
     
     //Find the CoreData OKDUser object given a table view used User object
-    func findOKDUserFromUser(currentUser: User) -> Int
+    func findOKDUserFromUser(currentUser: Customer) -> Int
     {
         var user = 0
         
-        for okdUser in users
+        for okdUser in customers
         {
             if(currentUser.phoneNumber == okdUser.valueForKey("phoneNumber") as! String){
-                user = users.indexOf(okdUser)!
+                user = customers.indexOf(okdUser)!
             }
         }
         return user
@@ -194,7 +194,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //checking for double taps here
         if(tapCount == 1 && tapTimer != nil && tappedRow == indexPath.row){
             let tableData = getDataSetFor(tableView)
-            let cellData = tableData.objectAtIndex(indexPath.row)
+            let cellData = tableData.dataSet[indexPath.row]
+            //let cellData = tableData.objectAtIndex(indexPath.row)
             
             if let cellCustomer = cellData as? Customer {
                 self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
@@ -223,11 +224,48 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    func tapTimerFired(aTimer:NSTimer){
+     func tapTimerFired(aTimer:NSTimer){
         //timer fired, there was a single tap on indexPath.row = tappedRow
         if(tapTimer != nil){
         tapCount = 0;
         tappedRow = -1;
+        }
+    }
+    
+    //Save a given table view User object into a CoreData OKDUser and save it in CoreData
+    func saveCustomer(user: Customer)
+    {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity =  NSEntityDescription.entityForName("OKDUser",
+            inManagedObjectContext:managedContext)
+
+        let index = findOKDUserFromUser(user)
+        
+        if (customers.count > 0){
+            managedContext.deleteObject(customers[index])
+            customers.removeAtIndex(index)
+        }
+
+        let customer = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        customer.setValue(user.firstName, forKey: "firstName")
+        customer.setValue(user.lastName, forKey: "lastName")
+        customer.setValue(user.phoneNumber, forKey: "phoneNumber")
+        customer.setValue(user.title, forKey: "title")
+        customer.setValue(user.tableNumber, forKey: "tableNumber")
+        
+        
+        do {
+            try managedContext.save()
+            findOKDUserFromUser(user)
+            //5
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
         }
     }
     
@@ -246,11 +284,11 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let toDataSet = getDataSetFor(toTableView)
         
         //Data to be exchanged
-        let exchangeData = fromDataSet.dataSet[from.row] as! User
+        let exchangeData = fromDataSet.dataSet[from.row] as! Customer
         exchangeData.tableNumber = toDataSet.tableNumber
         
         //Save user using Core Data
-        self.saveUser(exchangeData)
+        self.saveCustomer(exchangeData)
         
         //Update user sets
         fromDataSet.dataSet.removeObjectAtIndex(from.row)
@@ -275,7 +313,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func rearrangeItemAt(from: NSIndexPath!, withItemAt to: NSIndexPath!, inCollection collection: UIView!) {
         //TODO
     }
-    
+        
     func canItemAt(from: NSIndexPath!, fromCollection: UIView!, beDroppedAtPoint at: CGPoint, onCollection toCollection: UIView!) -> Bool {
         //Can always be moved
         return true
@@ -290,20 +328,40 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // Customer Profile
     func customerProfileToDisplay(controller: PopUpViewControllerSwift, customerProfile: Customer) {
+        /*
         customers.append(customerProfile)
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
         self.leftData.addObject(customerProfile)
         self.leftTable.reloadData()
+        
+        */
+        //Save user to core data
+        self.saveCustomer(customerProfile)
+        
+        //Update the table reference
+        //Always 1 as they get put into the left table when a user first comes in
+        customerProfile.tableNumber = 1
+        
+        //Add to the table views data and reload the table
+        self.leftData.addObject(customerProfile)
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
     }
     
     // Add customer
     func customerToAdd(controller: AddCustomerPopUpViewControllerSwift, addCustomer: Customer){
-        customers.append(addCustomer)
-        //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
+        //Save user to core data
+        self.saveCustomer(addCustomer)
+        
+        //Update the table reference
+        //Always 1 as they get put into the left table when a user first comes in
+        addCustomer.tableNumber = 1
+        
+        //Add to the table views data and reload the table
         self.leftData.addObject(addCustomer)
         self.leftTable.reloadData()
     }
-    
     
     //MARK: - Interface Actions
     @IBAction func newClient(sender: UIBarButtonItem) {
@@ -312,28 +370,5 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.addCustomerPopupViewController.title = "Add New Customer"
         self.addCustomerPopupViewController.showInView(self.view, withMessage: "Add Customer", animated: true)
     }
-    
-     func editMessageClient(){
-        self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: nil)
-        self.popViewController.delegate = self
-        self.popViewController.title = "Edit and Message Client"
-        self.popViewController.showInView(self.view, animated: true)
-    }
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-
-    
     
 }
