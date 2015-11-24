@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import CoreData
+import Oaked
 
 class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, I3DragDataSource, UIPopoverPresentationControllerDelegate, CustomerProfileDelegate, CustomerAddDelegate {
     
@@ -17,6 +18,11 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var middleTable: UITableView!
     @IBOutlet weak var rightTable: UITableView!
     @IBOutlet weak var addClient: UIBarButtonItem!
+    
+    @IBOutlet weak var leftTableLabel: UILabel!
+    @IBOutlet weak var middleTableLabel: UILabel!
+    @IBOutlet weak var rightTableLabel: UILabel!
+    
     
     // turn this into var customers = [NSManagedObject]()
     var customers = [NSManagedObject]()
@@ -62,6 +68,27 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //view.addGestureRecognizer(tap)
         //view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+        
+        //Sparkle Sparkle
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:titleTextColour, NSFontAttributeName: titleFont]
+        
+        self.navigationItem.rightBarButtonItem?.tintColor = buttonColour
+        self.navigationItem.rightBarButtonItem?.tintColor = buttonColour
+        
+        
+        /** Use for dark pro version
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent;
+        self.view.backgroundColor = UIColor.darkGrayColor()
+        self.leftTable.backgroundColor = UIColor.darkGrayColor()
+        self.middleTable.backgroundColor = UIColor.darkGrayColor()
+        self.rightTable.backgroundColor = UIColor.darkGrayColor()
+        **/
+        
+        
+        self.leftTableLabel.textColor = titleTextColour
+        self.middleTableLabel.textColor = titleTextColour
+        self.rightTableLabel.textColor = titleTextColour
+        
     }
     
     // Loads up data from Core Data
