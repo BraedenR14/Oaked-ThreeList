@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66B11D711C04025900E8D613 /* OakedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B11D701C04025900E8D613 /* OakedLogo.png */; };
+		66B11D741C04076E00E8D613 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B11D731C04076E00E8D613 /* LoginViewController.swift */; };
+		66CAD0611BE9C0CF0044C062 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */; };
+		66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */; };
+		66CAD0641BE9C0FD0044C062 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0631BE9C0FD0044C062 /* Customer.swift */; };
+		66E984BD1BFABFA2005CFA97 /* AddCustomerPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E984BC1BFABFA2005CFA97 /* AddCustomerPopupViewController.xib */; };
+		66FFC48C1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFC48A1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift */; };
+		DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */; };
+		DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21E21BDFF28B0084A2FA /* ViewController.swift */; };
+		DD0E21E61BDFF28B0084A2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E41BDFF28B0084A2FA /* Main.storyboard */; };
+		DD0E21E81BDFF28B0084A2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E71BDFF28B0084A2FA /* Assets.xcassets */; };
+		DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */; };
+		DD0E21F61BDFF28B0084A2FA /* OakedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E21F51BDFF28B0084A2FA /* OakedTests.swift */; };
+		DD0E22011BDFF28B0084A2FA /* OakedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */; };
+		DD3725011BFAA35C00BF67DF /* OKDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */; };
+		DD3725031BFAAB9300BF67DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3725021BFAAB9300BF67DF /* CoreData.framework */; };
+		DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */; };
+		DD6990371BE6D3BC0000F44B /* OKDSimpleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */; };
+		DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */; };
+		F75656D2E179050DE5B0B43E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A661B935AD6C06D6ACE7973 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD0E21F21BDFF28B0084A2FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD0E21D51BDFF28B0084A2FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD0E21DC1BDFF28B0084A2FA;
+			remoteInfo = Oaked;
+		};
+		DD0E21FD1BDFF28B0084A2FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD0E21D51BDFF28B0084A2FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD0E21DC1BDFF28B0084A2FA;
+			remoteInfo = Oaked;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A661B935AD6C06D6ACE7973 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B11D701C04025900E8D613 /* OakedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OakedLogo.png; sourceTree = "<group>"; };
+		66B11D731C04076E00E8D613 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
+		66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
+		66CAD0631BE9C0FD0044C062 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		66E984BC1BFABFA2005CFA97 /* AddCustomerPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCustomerPopupViewController.xib; sourceTree = "<group>"; };
+		66FFC48A1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerPopUpViewController.swift; sourceTree = "<group>"; };
+		8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0E21DD1BDFF28B0084A2FA /* Oaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD0E21E21BDFF28B0084A2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD0E21E51BDFF28B0084A2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD0E21E71BDFF28B0084A2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD0E21EA1BDFF28B0084A2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD0E21EC1BDFF28B0084A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD0E21F11BDFF28B0084A2FA /* OakedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OakedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0E21F51BDFF28B0084A2FA /* OakedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OakedTests.swift; sourceTree = "<group>"; };
+		DD0E21F71BDFF28B0084A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD0E21FC1BDFF28B0084A2FA /* OakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OakedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OakedUITests.swift; sourceTree = "<group>"; };
+		DD0E22021BDFF28B0084A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OKDModel.xcdatamodel; sourceTree = "<group>"; };
+		DD3725021BFAAB9300BF67DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDTableViewCell.swift; sourceTree = "<group>"; };
+		DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDSimpleData.swift; sourceTree = "<group>"; };
+		DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKDViewController.swift; sourceTree = "<group>"; };
+		DDA2BEB61BE01EA800BEEBBB /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD0E21DA1BDFF28B0084A2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3725031BFAAB9300BF67DF /* CoreData.framework in Frameworks */,
+				F75656D2E179050DE5B0B43E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21EE1BDFF28B0084A2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21F91BDFF28B0084A2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		609AC570774891FC3D8E56B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD3725021BFAAB9300BF67DF /* CoreData.framework */,
+				0A661B935AD6C06D6ACE7973 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66B11D721C0404A600E8D613 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66B11D701C04025900E8D613 /* OakedLogo.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		66CAD05E1BE9C0AE0044C062 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */,
+				66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */,
+				66FFC48A1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift */,
+				66E984BC1BFABFA2005CFA97 /* AddCustomerPopupViewController.xib */,
+			);
+			name = Popup;
+			sourceTree = "<group>";
+		};
+		AF4C2678707ADF84DCD2F2EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */,
+				8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD0E21D41BDFF28B0084A2FA = {
+			isa = PBXGroup;
+			children = (
+				DD0E21DF1BDFF28B0084A2FA /* Oaked */,
+				DD0E21F41BDFF28B0084A2FA /* OakedTests */,
+				DD0E21FF1BDFF28B0084A2FA /* OakedUITests */,
+				DD0E21DE1BDFF28B0084A2FA /* Products */,
+				AF4C2678707ADF84DCD2F2EC /* Pods */,
+				609AC570774891FC3D8E56B8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD0E21DE1BDFF28B0084A2FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E21DD1BDFF28B0084A2FA /* Oaked.app */,
+				DD0E21F11BDFF28B0084A2FA /* OakedTests.xctest */,
+				DD0E21FC1BDFF28B0084A2FA /* OakedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD0E21DF1BDFF28B0084A2FA /* Oaked */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD05E1BE9C0AE0044C062 /* Popup */,
+				66B11D721C0404A600E8D613 /* Resources */,
+				DD0E21E01BDFF28B0084A2FA /* AppDelegate.swift */,
+				DD0E21E21BDFF28B0084A2FA /* ViewController.swift */,
+				DD0E21E41BDFF28B0084A2FA /* Main.storyboard */,
+				DD0E21E71BDFF28B0084A2FA /* Assets.xcassets */,
+				DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */,
+				DD0E21EC1BDFF28B0084A2FA /* Info.plist */,
+				DDA2BEB31BE017C800BEEBBB /* OKDViewController.swift */,
+				DDA2BEB61BE01EA800BEEBBB /* Bridging.h */,
+				DD6990341BE6D0FF0000F44B /* OKDTableViewCell.swift */,
+				DD6990361BE6D3BC0000F44B /* OKDSimpleData.swift */,
+				66CAD0631BE9C0FD0044C062 /* Customer.swift */,
+				DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */,
+				66B11D731C04076E00E8D613 /* LoginViewController.swift */,
+			);
+			path = Oaked;
+			sourceTree = "<group>";
+		};
+		DD0E21F41BDFF28B0084A2FA /* OakedTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E21F51BDFF28B0084A2FA /* OakedTests.swift */,
+				DD0E21F71BDFF28B0084A2FA /* Info.plist */,
+			);
+			path = OakedTests;
+			sourceTree = "<group>";
+		};
+		DD0E21FF1BDFF28B0084A2FA /* OakedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E22001BDFF28B0084A2FA /* OakedUITests.swift */,
+				DD0E22021BDFF28B0084A2FA /* Info.plist */,
+			);
+			path = OakedUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD0E21DC1BDFF28B0084A2FA /* Oaked */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0E22051BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "Oaked" */;
+			buildPhases = (
+				A5FDB5D8894FA4DD4925BC6D /* Check Pods Manifest.lock */,
+				DD0E21D91BDFF28B0084A2FA /* Sources */,
+				DD0E21DA1BDFF28B0084A2FA /* Frameworks */,
+				DD0E21DB1BDFF28B0084A2FA /* Resources */,
+				7B2E86630576DE27C1E1C941 /* Embed Pods Frameworks */,
+				E21723A11B8A12C08ECF5512 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Oaked;
+			productName = Oaked;
+			productReference = DD0E21DD1BDFF28B0084A2FA /* Oaked.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD0E21F01BDFF28B0084A2FA /* OakedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0E22081BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedTests" */;
+			buildPhases = (
+				DD0E21ED1BDFF28B0084A2FA /* Sources */,
+				DD0E21EE1BDFF28B0084A2FA /* Frameworks */,
+				DD0E21EF1BDFF28B0084A2FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD0E21F31BDFF28B0084A2FA /* PBXTargetDependency */,
+			);
+			name = OakedTests;
+			productName = OakedTests;
+			productReference = DD0E21F11BDFF28B0084A2FA /* OakedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DD0E21FB1BDFF28B0084A2FA /* OakedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0E220B1BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedUITests" */;
+			buildPhases = (
+				DD0E21F81BDFF28B0084A2FA /* Sources */,
+				DD0E21F91BDFF28B0084A2FA /* Frameworks */,
+				DD0E21FA1BDFF28B0084A2FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD0E21FE1BDFF28B0084A2FA /* PBXTargetDependency */,
+			);
+			name = OakedUITests;
+			productName = OakedUITests;
+			productReference = DD0E21FC1BDFF28B0084A2FA /* OakedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD0E21D51BDFF28B0084A2FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Braeden Robak";
+				TargetAttributes = {
+					DD0E21DC1BDFF28B0084A2FA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					DD0E21F01BDFF28B0084A2FA = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DD0E21DC1BDFF28B0084A2FA;
+					};
+					DD0E21FB1BDFF28B0084A2FA = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DD0E21DC1BDFF28B0084A2FA;
+					};
+				};
+			};
+			buildConfigurationList = DD0E21D81BDFF28B0084A2FA /* Build configuration list for PBXProject "Oaked" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD0E21D41BDFF28B0084A2FA;
+			productRefGroup = DD0E21DE1BDFF28B0084A2FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD0E21DC1BDFF28B0084A2FA /* Oaked */,
+				DD0E21F01BDFF28B0084A2FA /* OakedTests */,
+				DD0E21FB1BDFF28B0084A2FA /* OakedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD0E21DB1BDFF28B0084A2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */,
+				DD0E21E81BDFF28B0084A2FA /* Assets.xcassets in Resources */,
+				DD0E21E61BDFF28B0084A2FA /* Main.storyboard in Resources */,
+				66E984BD1BFABFA2005CFA97 /* AddCustomerPopupViewController.xib in Resources */,
+				66CAD0611BE9C0CF0044C062 /* PopUpViewController.xib in Resources */,
+				66B11D711C04025900E8D613 /* OakedLogo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21EF1BDFF28B0084A2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21FA1BDFF28B0084A2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B2E86630576DE27C1E1C941 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5FDB5D8894FA4DD4925BC6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E21723A11B8A12C08ECF5512 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD0E21D91BDFF28B0084A2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6990371BE6D3BC0000F44B /* OKDSimpleData.swift in Sources */,
+				DD6990351BE6D0FF0000F44B /* OKDTableViewCell.swift in Sources */,
+				DD0E21E31BDFF28B0084A2FA /* ViewController.swift in Sources */,
+				DDA2BEB41BE017C800BEEBBB /* OKDViewController.swift in Sources */,
+				DD3725011BFAA35C00BF67DF /* OKDModel.xcdatamodeld in Sources */,
+				DD0E21E11BDFF28B0084A2FA /* AppDelegate.swift in Sources */,
+				66FFC48C1BF9A82D00C23264 /* AddCustomerPopUpViewController.swift in Sources */,
+				66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */,
+				66B11D741C04076E00E8D613 /* LoginViewController.swift in Sources */,
+				66CAD0641BE9C0FD0044C062 /* Customer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21ED1BDFF28B0084A2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0E21F61BDFF28B0084A2FA /* OakedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0E21F81BDFF28B0084A2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0E22011BDFF28B0084A2FA /* OakedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD0E21F31BDFF28B0084A2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD0E21DC1BDFF28B0084A2FA /* Oaked */;
+			targetProxy = DD0E21F21BDFF28B0084A2FA /* PBXContainerItemProxy */;
+		};
+		DD0E21FE1BDFF28B0084A2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD0E21DC1BDFF28B0084A2FA /* Oaked */;
+			targetProxy = DD0E21FD1BDFF28B0084A2FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD0E21E41BDFF28B0084A2FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD0E21E51BDFF28B0084A2FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD0E21E91BDFF28B0084A2FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD0E21EA1BDFF28B0084A2FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD0E22031BDFF28B0084A2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		DD0E22041BDFF28B0084A2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD0E22061BDFF28B0084A2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A5081E34944331B7FD0628 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Oaked/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.Oaked;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
+			};
+			name = Debug;
+		};
+		DD0E22071BDFF28B0084A2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C48E67F92D9706D49E7AEF7 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Oaked/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.Oaked;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Oaked/Bridging.h;
+			};
+			name = Release;
+		};
+		DD0E22091BDFF28B0084A2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OakedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.OakedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oaked.app/Oaked";
+			};
+			name = Debug;
+		};
+		DD0E220A1BDFF28B0084A2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OakedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.OakedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oaked.app/Oaked";
+			};
+			name = Release;
+		};
+		DD0E220C1BDFF28B0084A2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OakedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.OakedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oaked;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DD0E220D1BDFF28B0084A2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OakedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.team1.OakedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oaked;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD0E21D81BDFF28B0084A2FA /* Build configuration list for PBXProject "Oaked" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0E22031BDFF28B0084A2FA /* Debug */,
+				DD0E22041BDFF28B0084A2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0E22051BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "Oaked" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0E22061BDFF28B0084A2FA /* Debug */,
+				DD0E22071BDFF28B0084A2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0E22081BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0E22091BDFF28B0084A2FA /* Debug */,
+				DD0E220A1BDFF28B0084A2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0E220B1BDFF28B0084A2FA /* Build configuration list for PBXNativeTarget "OakedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0E220C1BDFF28B0084A2FA /* Debug */,
+				DD0E220D1BDFF28B0084A2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD3724FF1BFAA35C00BF67DF /* OKDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */,
+			);
+			currentVersion = DD3725001BFAA35C00BF67DF /* OKDModel.xcdatamodel */;
+			path = OKDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DD0E21D51BDFF28B0084A2FA /* Project object */;
+}

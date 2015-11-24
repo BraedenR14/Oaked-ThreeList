@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OakedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="dIT-5Y-DaJ">
+                                <rect key="frame" x="111" y="109" width="379" height="381"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-x8-Yu7">
+                                <rect key="frame" x="226" y="43" width="148" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="0SH-VS-zJS"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Oaked">
+                                        <attributes>
+                                            <font key="NSFont" size="21" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dIT-5Y-DaJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="91" id="QKm-Io-Muu"/>
+                            <constraint firstItem="tbO-x8-Yu7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="23" id="TrY-EG-kea"/>
+                            <constraint firstItem="tbO-x8-Yu7" firstAttribute="centerX" secondItem="dIT-5Y-DaJ" secondAttribute="centerX" id="eDS-24-hu2"/>
+                            <constraint firstItem="dIT-5Y-DaJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kwQ-FJ-K3o"/>
+                            <constraint firstItem="dIT-5Y-DaJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n9u-aq-nab"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dIT-5Y-DaJ" secondAttribute="bottom" constant="110" id="y0h-1Z-Sj5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="OakedLogo.png" width="462" height="457"/>
+    </resources>
+</document>
