@@ -166,8 +166,11 @@
                     <connections>
                         <outlet property="addClient" destination="gIW-4H-1tE" id="p9x-Hj-Jq5"/>
                         <outlet property="leftTable" destination="Ga9-io-Fam" id="n9p-En-OgQ"/>
+                        <outlet property="leftTableLabel" destination="b5F-dF-Tp1" id="Dn9-xv-ZFx"/>
                         <outlet property="middleTable" destination="aEp-71-p02" id="o97-t8-0bE"/>
+                        <outlet property="middleTableLabel" destination="zks-jG-gWM" id="xGD-wP-395"/>
                         <outlet property="rightTable" destination="ehW-wL-MBj" id="8tE-tk-hsQ"/>
+                        <outlet property="rightTableLabel" destination="c9F-qP-aG0" id="wYv-Wf-ZM2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
