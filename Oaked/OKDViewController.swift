@@ -27,6 +27,10 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // turn this into var customers = [NSManagedObject]()
     var customers = [NSManagedObject]()
     
+    var appDelegate = AppDelegate()
+    var managedContext = NSManagedObjectContext()
+    
+    
     var dragCoodinator :I3GestureCoordinator = I3GestureCoordinator()
     
     let tap = UITapGestureRecognizer()
@@ -43,6 +47,9 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedContext = appDelegate.managedObjectContext
         
         //let data :OKDSimpleData = OKDSimpleData(title: "Test title")
         //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
@@ -65,6 +72,21 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         tap.numberOfTapsRequired = 2
         tap.addTarget(self, action: "editMessageClient")
+        
+        /** Uncomment to delete everything saved
+        
+        let fetchRequest = NSFetchRequest(entityName: "OKDUser")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+        */
+        
+        
         //view.addGestureRecognizer(tap)
         //view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
@@ -260,22 +282,19 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //Save a given table view User object into a CoreData OKDUser and save it in CoreData
-    func saveCustomer(user: Customer)
-    {
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
+    func saveCustomer(user: Customer){
         
         let entity =  NSEntityDescription.entityForName("OKDUser",
             inManagedObjectContext:managedContext)
 
         let index = findOKDUserFromUser(user)
         
+        /**
         if (customers.count > 0){
             managedContext.deleteObject(customers[index])
             customers.removeAtIndex(index)
         }
+        **/
 
         let customer = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
@@ -289,7 +308,8 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         do {
             try managedContext.save()
-            findOKDUserFromUser(user)
+            customers.append(customer)
+            
             //5
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
@@ -303,6 +323,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func dropItemAt(from: NSIndexPath!, fromCollection: UIView!, toItemAt to: NSIndexPath!, onCollection toCollection: UIView!) {
+        
         let fromTableView = fromCollection as! UITableView
         let toTableView = toCollection as! UITableView
         
@@ -313,6 +334,11 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //Data to be exchanged
         let exchangeData = fromDataSet.dataSet[from.row] as! Customer
         exchangeData.tableNumber = toDataSet.tableNumber
+        
+        //Find index of old data and delete it
+        let index = findOKDUserFromUser(exchangeData)
+        managedContext.deleteObject(customers[index])
+        customers.removeAtIndex(index)
         
         //Save user using Core Data
         self.saveCustomer(exchangeData)
@@ -355,19 +381,13 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // Customer Profile
     func customerProfileToDisplay(controller: PopUpViewControllerSwift, customerProfile: Customer) {
-        /*
-        customers.append(customerProfile)
-        //let data :User = User(firstName: "John", lastName: "Appleseed", phoneNumber: "403-123-4567")
-        self.leftData.addObject(customerProfile)
-        self.leftTable.reloadData()
-        
-        */
-        //Save user to core data
-        self.saveCustomer(customerProfile)
         
         //Update the table reference
         //Always 1 as they get put into the left table when a user first comes in
         customerProfile.tableNumber = 1
+        
+        //Save user to core data
+        self.saveCustomer(customerProfile)
         
         //Add to the table views data and reload the table
         self.leftData.addObject(customerProfile)
@@ -378,12 +398,13 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // Add customer
     func customerToAdd(controller: AddCustomerPopUpViewControllerSwift, addCustomer: Customer){
-        //Save user to core data
-        self.saveCustomer(addCustomer)
-        
         //Update the table reference
         //Always 1 as they get put into the left table when a user first comes in
         addCustomer.tableNumber = 1
+        
+        //Save user to core data
+        self.saveCustomer(addCustomer)
+        
         
         //Add to the table views data and reload the table
         self.leftData.addObject(addCustomer)
