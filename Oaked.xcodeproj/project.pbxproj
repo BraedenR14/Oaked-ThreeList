@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		665A40EC1C06A97300B8406F /* app_icon-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 665A40EB1C06A97300B8406F /* app_icon-png.png */; };
 		665A40EE1C06C8A500B8406F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A40ED1C06C8A500B8406F /* LoginViewController.swift */; };
+		665A40F01C06D83E00B8406F /* message-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 665A40EF1C06D83E00B8406F /* message-32.png */; };
+		665A40F21C06D84500B8406F /* user_male-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 665A40F11C06D84500B8406F /* user_male-32.png */; };
 		66CAD0611BE9C0CF0044C062 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */; };
 		66CAD0621BE9C0CF0044C062 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */; };
 		66CAD0641BE9C0FD0044C062 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD0631BE9C0FD0044C062 /* User.swift */; };
@@ -51,6 +53,8 @@
 		0A661B935AD6C06D6ACE7973 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		665A40EB1C06A97300B8406F /* app_icon-png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon-png.png"; sourceTree = "<group>"; };
 		665A40ED1C06C8A500B8406F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		665A40EF1C06D83E00B8406F /* message-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message-32.png"; sourceTree = "<group>"; };
+		665A40F11C06D84500B8406F /* user_male-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male-32.png"; sourceTree = "<group>"; };
 		66CAD05F1BE9C0CF0044C062 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		66CAD0601BE9C0CF0044C062 /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
 		66CAD0631BE9C0FD0044C062 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				665A40EB1C06A97300B8406F /* app_icon-png.png */,
+				665A40F11C06D84500B8406F /* user_male-32.png */,
+				665A40EF1C06D83E00B8406F /* message-32.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0E21EB1BDFF28B0084A2FA /* LaunchScreen.storyboard in Resources */,
+				665A40F01C06D83E00B8406F /* message-32.png in Resources */,
+				665A40F21C06D84500B8406F /* user_male-32.png in Resources */,
 				DD0E21E81BDFF28B0084A2FA /* Assets.xcassets in Resources */,
 				665A40EC1C06A97300B8406F /* app_icon-png.png in Resources */,
 				DD0E21E61BDFF28B0084A2FA /* Main.storyboard in Resources */,
