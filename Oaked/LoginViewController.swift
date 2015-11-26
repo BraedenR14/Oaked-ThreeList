@@ -48,6 +48,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         signinButton.backgroundColor = titleTextColour
         signinButton.tintColor = UIColor.whiteColor()
         
+        // Set background color
+        self.view.backgroundColor = UIColor.lightGrayColor()
+        
         // Handle the email text field's user input through delegate callbacks.
         emailTextField.delegate = self
     }
