@@ -95,7 +95,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:titleTextColour, NSFontAttributeName: titleFont]
         
         self.navigationItem.rightBarButtonItem?.tintColor = buttonColour
-        self.navigationItem.rightBarButtonItem?.tintColor = buttonColour
+        self.navigationItem.leftBarButtonItem?.tintColor = titleTextColour
         
         
         /** Use for dark pro version
@@ -110,7 +110,7 @@ class OKDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.leftTableLabel.textColor = titleTextColour
         self.middleTableLabel.textColor = titleTextColour
         self.rightTableLabel.textColor = titleTextColour
-        
+
     }
     
     // Loads up data from Core Data
