@@ -20,6 +20,9 @@ import QuartzCore
     @IBOutlet weak var firstNameLabel: UITextField!
     @IBOutlet weak var lastNameLabel: UITextField!
     @IBOutlet weak var phoneNumberLabel: UITextField!
+    @IBOutlet weak var popUpTabBar: UITabBar!
+
+    
 
     var delegate: CustomerProfileDelegate! = nil
     
@@ -40,17 +43,21 @@ import QuartzCore
         self.popUpView.layer.cornerRadius = 5
         self.popUpView.layer.shadowOpacity = 0.8
         self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
-        self.title = "\(customer!.firstName) \(customer!.lastName)'s Profile"
+        self.title = "\(customer!.firstName) \(customer!.lastName)"
         firstNameLabel.text = customer?.firstName
         lastNameLabel.text = customer?.lastName
         phoneNumberLabel.text = customer?.phoneNumber
+        
+        popUpTabBar.barTintColor = titleTextColour
+        popUpTabBar.tintColor = UIColor.whiteColor()
+        
     }
     
     public func showInView(aView: UIView!, animated: Bool)
     {
         aView.addSubview(self.view)
         // Catch when only a first name, or only a last name, or neither exist
-        messageLabel!.text = "\(customer!.firstName) \(customer!.lastName)'s Profile"
+        messageLabel!.text = "\(customer!.firstName) \(customer!.lastName)"
         if animated
         {
             self.showAnimate()
